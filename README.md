@@ -1,5 +1,7 @@
 # Discord Web Game Toolkit
 
+![](images/discord-auth.png)
+
 ![](images/discord-bot-demo.png)
 
 What's included here?
