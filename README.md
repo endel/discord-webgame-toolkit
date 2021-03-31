@@ -1,4 +1,4 @@
-# Discord Web Game Toolkit
+# Discord Web Game Toolkit 
 
 The code on this repository is a Node.js application that you can either copy the files over to your existing Node.js application, or build your own stuff on top of it. You should deploy this code on your own server in order to have it working for your game.
 
@@ -61,6 +61,25 @@ In the `.env` file, the token will look like this:
 DISCORD_BOT_TOKEN=NzkwNjQ3NTkyNDgwMjc2NTQx.X-Dp8w.hBQGt-ioJKvaIgdWp0NPFRPIa-w
 ```
 
+## Adding the bot to your server
+
+The last step is to add the bot into your server. 
+
+1. Select "OAuth" in the sidebar.
+2. In the "OAuth2 URL Generator", under "scopes" - select "bot".
+3. Under "Bot permissions", select "Send Messages", and "Embed links". You may select more options if you are going to implement more features on your own!
+
+![Add Bot To Your Server](images/discord-oauth-addbot.png)
+
+Now, click on "Copy" in the authorization URL, and open it in your browser. You will be asked to select the server the bot is going to join:
+
+![Add Bot To Your Server](images/discord-oauth-addbot-authorize.png)
+
+You're done! Have fun making custom bot actions for your game!
+
+# Community
+
+<a href="https://discord.gg/dqTw2cKrAe"><img src="https://img.shields.io/discord/788501666160574494.svg?style=for-the-badge&colorB=7581dc&logo=discord&logoColor=white"></a>
 
 # License
 
