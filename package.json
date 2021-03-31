@@ -1,0 +1,55 @@
+{
+  "private": true,
+  "name": "discord-webgame-toolkit",
+  "version": "1.0.0",
+  "description": "Discord Web Auth for Games + Bot",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "ts-node-dev src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/endel/discord-webgame-toolkit.git"
+  },
+  "keywords": [
+    "discord",
+    "web",
+    "auth",
+    "bot"
+  ],
+  "author": "Endel Dreyer",
+  "license": "see LICENSE.md file",
+  "bugs": {
+    "url": "https://github.com/endel/discord-webgame-toolkit/issues"
+  },
+  "homepage": "https://github.com/endel/discord-webgame-toolkit#readme",
+  "dependencies": {
+    "@mikro-orm/core": "^4.5.1",
+    "@mikro-orm/mongodb": "^4.5.1",
+    "@types/express-session": "^1.17.3",
+    "discord.js": "^12.5.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "grant": "^5.4.12",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.6.5"
+  },
+  "devDependencies": {
+    "@types/discord-rpc": "^3.0.4",
+    "@types/express": "^4.17.11",
+    "@types/jsonwebtoken": "^8.5.1",
+    "@types/node": "^14.14.22",
+    "ts-node": "^9.1.1",
+    "ts-node-dev": "^1.1.6",
+    "typescript": "^4.1.3"
+  },
+  "mikro-orm": {
+    "useTsNode": true,
+    "configPaths": [
+      "./src/config/mikro-orm.config.ts",
+      "./lib/config/mikro-orm.config.js"
+    ]
+  }
+}
