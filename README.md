@@ -1,5 +1,7 @@
 # Discord Web Game Toolkit
 
+The code on this repository is a Node.js application that you can either copy the files over to your existing Node.js application, or build your own stuff on top of it. You should deploy this code on your own server in order to have it working for your game.
+
 <img src="images/discord-auth.png" width="30%" align="left" />
 <img src="images/discord-bot-demo.png" width="63%" />
 
