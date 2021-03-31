@@ -10,13 +10,12 @@
 <body>
     <h1>Discord Web Auth + Bot</h1>
 
+    <button onclick="discordSignIn();">Login</button>
+
+    <button onclick="discordSignOut();">Logout</button>
+    <br /><br />
+
     <button onclick="getUserData();">Retrieve user data from cached local token</button>
-    <br /><br />
-
-    <button onclick="discordSignIn();">Sign in with popup! (Without redirecting)</button>
-    <br /><br />
-
-    <button onclick="discordSignOut();">Sign out</button>
     <br /><br />
 
     <p id="response"></p>
