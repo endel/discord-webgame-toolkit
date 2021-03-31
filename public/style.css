@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;300;400&display=swap');
+
+body {
+    font-family: Lexend, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+    font-size: 20px;
+    color: rgb(35, 39, 42);
+    overflow: hidden;
+}
+
+input, button {
+    font-family: inherit; 
+    font-size: inherit;
+}
+
+a.button {
+    display: inline-block;
+}
+
+button, a.button {
+    background-color: #7289da;
+    color: #fff;
+    border-radius: 28px;
+    border: 0;
+    padding: 16px 32px;
+    cursor: pointer;
+    transition: box-shadow 0.2s, background-color 0.2s;
+}
+
+button:hover, a.button {
+    background-color: #8ea1e1;
+    box-shadow: 0 8px 15px rgb(0 0 0 / 20%);
+}
+
+h1, h2, h3, strong {
+    /* color: rgb(114, 137, 218); */
+    font-weight: bold;
+}
+
+h1 {
+    padding: 1em;
+}
+
+p {
+    text-align: left;;
+    background: rgb(35, 39, 42);
+    color: #fff;
+    padding: 1em;
+    font-family: monospace;
+    white-space: pre;
+}

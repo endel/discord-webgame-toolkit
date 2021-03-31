@@ -17,11 +17,23 @@ function removeItem(key) {
   try { localStorage.removeItem(key); } catch (e) {}
 }
 
-let token = getItem("token", undefined);
+export let token = getItem("token", undefined);
 let userData = {};
 
 // cache signInWindow in case of multiple signIn() calls.
 let signInWindow = undefined;
+
+/**
+ * Request user data with with token received from the server.
+ */
+export function getUserData(backendUrl) {
+  return new Promise(function (resolve, reject) {
+    fetch(`${backendUrl}/auth?token=${token}`)
+      .then((response) => response.json())
+      .then((data) => resolve(data))
+      .catch((err) => reject(err));
+  });
+}
 
 export function signIn(backendUrl) {
     return new Promise((resolve, reject) => {

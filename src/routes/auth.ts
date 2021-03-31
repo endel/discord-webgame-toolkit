@@ -8,11 +8,10 @@ const auth = express.Router();
 
 auth.get("/", async (req: express.Request, res: express.Response) => {
   const token = req.query['token'] as string;
-
-  const response: any = { userData: undefined };
+  const response: any = { user: undefined };
 
   try {
-    response['userData'] = (token) ? await getUserFromToken(token) : undefined;
+    response['user'] = (token) ? await getUserFromToken(token) : undefined;
   } catch (e) {}
 
   res.json(response);
@@ -20,11 +19,19 @@ auth.get("/", async (req: express.Request, res: express.Response) => {
 
 auth.get("/discord/callback", async (req, res) => {
   const session = req.session as typeof req.session & { grant: GrantSession };
-  const profile: any = session.grant?.response?.profile;
+  const grant = session.grant;
+  const profile: any = grant?.response?.profile;
+
+  //
+  // "dynamic" are the query parameters you provide for the first "/connect/:provider" request.
+  //
+  // const dynamic: any = grant?.dynamic;
 
   if (profile) {
     // try to find existing user
-    let user = await DI.userRepository.findOne({ discord_id: profile['id'] });
+    let user = await DI.userRepository.findOne({
+      discord_id: profile['id']
+    });
 
     // register a new user
     if (!user) {

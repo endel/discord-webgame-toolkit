@@ -5,26 +5,65 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discord Web Auth + Bot</title>
-
-    <script type="module">
-        import { signIn, signOut } from "./signin.js";
-
-        window.discordSignIn = function () {
-            signIn('http://localhost:3000').then((response) => {
-                console.log("SUCCESS:", response)
-                document.getElementById('response').innerText = "SUCCESS: " + JSON.stringify(response);
-
-            }).catch((err) => {
-                document.getElementById('response').innerText = "ERROR: " + JSON.stringify(err);
-            });
-        }
-    </script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Discord Web Auth + Bot</h1>
 
-    <button onclick="discordSignIn();">Sign in!</button>
+    <button onclick="getUserData();">Retrieve user data from cached local token</button>
+    <br /><br />
+
+    <button onclick="discordSignIn();">Sign in with popup! (Without redirecting)</button>
+    <br /><br />
+
+    <button onclick="discordSignOut();">Sign out</button>
+    <br /><br />
+
     <p id="response"></p>
+
+    <script type="module">
+        import { signIn, signOut, getUserData, token } from "./signin.js";
+
+        function clearStatus() {
+            document.getElementById('response').innerText = "";
+        }
+
+        function addStatus(text) {
+            document.getElementById('response').innerText += text + "\n";
+        }
+
+        addStatus("Token? " + JSON.stringify(token));
+
+        window.getUserData = function() {
+            clearStatus();
+            addStatus(`Request => http://localhost:3000/auth?token=${token}...`);
+            getUserData('http://localhost:3000')
+                .then((data) => {
+                    addStatus("Response => " + JSON.stringify(data, null, 2))
+                })
+                .catch((err) => {
+                    addStatus("(getUserData) ERROR: " + JSON.stringify(err, null, 2));
+                });
+        };
+
+        window.discordSignIn = function () {
+            clearStatus();
+            addStatus("Login window opened.");
+            signIn('http://localhost:3000').then((response) => {
+                console.log("SUCCESS:", response)
+                addStatus("Response => " + JSON.stringify(response, null, 2));
+
+            }).catch((err) => {
+                addStatus("Error callback. " + JSON.stringify(err, null, 2));
+            });
+        }
+
+        window.discordSignOut = function() {
+            clearStatus();
+            addStatus("Local token cleared.");
+            signOut();
+        };
+    </script>
     
 </body>
 </html>
