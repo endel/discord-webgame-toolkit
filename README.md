@@ -1,8 +1,7 @@
 # Discord Web Game Toolkit
 
-![](images/discord-auth.png)
-
-![](images/discord-bot-demo.png)
+<img src="images/discord-auth.png" width="30%" />
+<img src="images/discord-bot-demo.png" width="63%" />
 
 What's included here?
 
