@@ -38,9 +38,12 @@ DISCORD_CLIENT_ID=790647592480276541
 DISCORD_CLIENT_SECRET=20fgvLavtsc87sMXYdV6ETeSI92LwP8m
 ```
 
-> TODO: explain the session store + redis.
+Add OAuth Redirect to all possible deployments of your game. You should have at least two entries here:
 
-> TODO: explain grant
+![OAuth Redirects](images/discord-oauth-redirects.png)
+
+- `http://localhost:3000/connect/discord/callback`: For testing locally.
+- `http://yourgame.io/connect/discord/callback`: For the live game (replace `yourgame.io` to where your game is deployed remotely!)
 
 ## Discord bot
 

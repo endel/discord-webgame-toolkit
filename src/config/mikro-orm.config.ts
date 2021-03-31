@@ -6,7 +6,7 @@ import { BaseEntity } from '../models/BaseEntity';
 const options: Options = {
   type: 'mongo',
   entities: [User, BaseEntity],
-  dbName: 'brawlball',
+  dbName: 'discord_webgame_toolkit',
   logger: console.log.bind(console),
   debug: true,
   clientUrl: process.env.MONGO_CLIENT_URL || process.env.MONGO_URI  || 'mongodb://localhost:27017'

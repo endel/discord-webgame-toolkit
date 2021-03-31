@@ -8,11 +8,23 @@
 
     <script type="module">
         import { signIn, signOut } from "./signin.js";
-        console.log(signIn, signOut);
+
+        window.discordSignIn = function () {
+            signIn('http://localhost:3000').then((response) => {
+                console.log("SUCCESS:", response)
+                document.getElementById('response').innerText = "SUCCESS: " + JSON.stringify(response);
+
+            }).catch((err) => {
+                document.getElementById('response').innerText = "ERROR: " + JSON.stringify(err);
+            });
+        }
     </script>
 </head>
 <body>
     <h1>Discord Web Auth + Bot</h1>
+
+    <button onclick="discordSignIn();">Sign in!</button>
+    <p id="response"></p>
     
 </body>
 </html>
