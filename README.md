@@ -5,14 +5,14 @@ The code on this repository is a Node.js application that you can either copy th
 <img src="images/discord-auth.png" width="30%" align="left" />
 <img src="images/discord-bot-demo.png" width="63%" />
 
-What's included here?
+**What's included here?**
 
 - Discord OAuth Integration
 - Discord Bot with a `!profile` command to output the player's profile.
 - Express routes to authenticate with Discord
 - A `User` model with default properties, and a database setup. Add more models as you need.
 
-Node modules in use:
+**Node modules in use:**
 - [MikroORM](https://www.npmjs.com/package/@mikro-orm/core) + [MongoDB](https://www.npmjs.com/package/mongodb) for database access.
 - [Grant](https://www.npmjs.com/package/grant) for OAuth integration. Only Discord is being used, but you can easily use more providers such as Google, Twitter, etc.
 - [Express](https://www.npmjs.com/package/express) for binding Grant routes, and custom login.
@@ -20,6 +20,37 @@ Node modules in use:
 - [Discord.js](https://www.npmjs.com/package/discord.js) for Discord Bot integration.
 
 # Setup Instructions
+
+## Setting up your local environment
+
+- [Download and install Node.js v14](https://nodejs.org/en/)
+- [Download and install MongoDB Community Edition](https://www.mongodb.com/try/download/community) 
+- [Download and install Visual Studio Code](https://code.visualstudio.com/) (or other editor of your choice)
+
+To run the project locally, open the folder of this package on your terminal, and run the following commands:
+
+```
+npm install
+npm start
+```
+
+You should see the following logs:
+
+```
+> discord-webgame-toolkit@1.0.0 start
+> ts-node-dev src/index.ts
+
+[INFO] 13:07:50 ts-node-dev ver. 1.1.6 (using ts-node ver. 9.1.1, typescript ver. 4.1.3)
+[discovery] ORM entity discovery started, using ReflectMetadataProvider
+[discovery] - processing entity User
+[discovery] - processing entity BaseEntity
+[discovery] - entity discovery finished, found 2 entities, took 16 ms
+[info] MikroORM successfully connected to database discord_webgame_toolkit on mongodb://localhost:27017
+Database connected.
+Listening on ws://localhost:3000
+Application v1.0.0 ready.
+Discord bot logged in as Webgame Toolkit#3978!
+```
 
 ## Discord Authentication
 
@@ -79,7 +110,7 @@ You're done! Have fun making custom bot actions for your game!
 
 # Community
 
-<a href="https://discord.gg/dqTw2cKrAe"><img src="https://img.shields.io/discord/788501666160574494.svg?style=for-the-badge&colorB=7581dc&logo=discord&logoColor=white"></a>
+<a href="https://discord.gg/dqTw2cKrAe">Join the Discord Test server.</a>
 
 # License
 
