@@ -49,7 +49,8 @@ export function signIn(backendUrl) {
         signInWindow = window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
 
         const onMessage = (event) => {
-            if (event.origin.indexOf(window.location.hostname) === -1) { return; }
+            // TODO: it is a good idea to check if event.origin can be trusted!
+            // if (event.origin.indexOf(window.location.hostname) === -1) { return; }
 
             console.log("RECEIVED DATA:", event.data);
 

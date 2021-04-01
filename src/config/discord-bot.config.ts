@@ -17,6 +17,10 @@ bot.on('ready', () => {
 
 bot.on('message', async (msg) => {
     console.log("Discord Bot reading message: ", msg.content);
+
+    // 
+    // Check if message starts with "!profile"
+    //
     if (msg.content.startsWith('!profile')) {
         const mentions = Array.from(msg.mentions.users.keys());
         const discord_id = mentions?.[0] || msg.author.id;

@@ -110,6 +110,40 @@ Now, click on "Copy" in the authorization URL, and open it in your browser. You 
 
 You're done! Have fun making custom bot actions for your game!
 
+# Modifying the source-code
+
+The source-code on this repository is very simple, and should be easily exchangeable if you'd like to move it over to an existing project.
+
+## The `User` model and MikroORM
+
+MikroORM is an object–relational mapping that supports multiple database engines. On the current set-up, this project uses MongoDB, as you can see on `src/config/mikro-orm.config.ts`:
+
+```typescript
+// ...
+const options: Options = {
+  type: 'mongo',
+  entities: [User, BaseEntity],
+  dbName: 'discord_webgame_toolkit',
+// ...
+```
+
+[See MikroORM documentation](https://mikro-orm.io/docs/installation) if you'd like to use a different database engine.
+
+## The Discord Bot logic
+
+You can find the Discord Bot logic at `src/config/discord-bot.config.ts`. The discord.js API is quite extensive and is very versatile. You can see the full documentation of its capabilities at [discord.js.org](https://discord.js.org/#/docs/).
+
+
+## Deployment
+
+After you deploy this on your own server, make sure to update the `BACKEND_URL` in your `.env` file. This step is fundamental due to the way OAuth handle redirects internally.
+
+```
+BACKEND_URL=https://gamestd.io
+```
+
+Above is a real-world example of how this is currently set-up for the [public demo](https://endel.dev/discord-webgame-toolkit).
+
 # Community
 
 <a href="https://discord.gg/dqTw2cKrAe">Join the Discord Test server.</a>
