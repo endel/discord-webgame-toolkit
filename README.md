@@ -114,7 +114,7 @@ You're done! Have fun making custom bot actions for your game!
 
 The source-code on this repository is very simple, and should be easily exchangeable if you'd like to move it over to an existing project.
 
-## The `User` model and MikroORM
+## MikroORM and the `User` model 
 
 MikroORM is an object–relational mapping that supports multiple database engines. On the current set-up, this project uses MongoDB, as you can see on `src/config/mikro-orm.config.ts`:
 
@@ -129,10 +129,20 @@ const options: Options = {
 
 [See MikroORM documentation](https://mikro-orm.io/docs/installation) if you'd like to use a different database engine.
 
+You can add as many properties as you need in the `User` model located at `src/models/User.ts`. You could have a field to keep track of each user's highscores, for example, and more game-specific stats.
+
+To perform operations in your `User` model, MikroORM requires you to access it from its respective [EntityRepository](https://mikro-orm.io/docs/repositories-api) instance:
+
+
+```typescript
+import { DI } from "../config/database.config";
+
+let user = await DI.userRepository.findOne({ name: /endel/i });
+```
+
 ## The Discord Bot logic
 
 You can find the Discord Bot logic at `src/config/discord-bot.config.ts`. The discord.js API is quite extensive and is very versatile. You can see the full documentation of its capabilities at [discord.js.org](https://discord.js.org/#/docs/).
-
 
 ## Deployment
 
