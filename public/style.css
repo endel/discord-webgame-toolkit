@@ -53,6 +53,14 @@ h1, h2, h3, strong {
     font-weight: bold;
 }
 
+p {
+    padding-bottom: 0.5em;
+}
+
+section h1 {
+    padding-bottom: 0.5em;
+}
+
 pre {
     text-align: left;;
     background: rgb(35, 39, 42);
@@ -68,7 +76,21 @@ header {
     position: relative;
     margin: 0;
     overflow: hidden;
-    border-bottom: 1px solid #f6f6f6;
+}
+
+header .disclaimer {
+    position: absolute;
+    bottom: 1em;
+    left: 0;
+    right: 0;
+}
+
+header a.button {
+    margin-right: 0.5em;
+}
+
+header h1 {
+    padding-bottom: 0.5em;
 }
 
 .split {
@@ -119,8 +141,24 @@ section.gray {
     padding: 0;
 }
 
+section.faq p {
+    text-align: left;
+    font-weight: 300;
+}
+
+section.faq p:nth-child(even) {
+    margin-top: 1.5em;
+}
+
+section.faq strong {
+    font-weight: bolder;
+}
+
 section.about {
+    margin-top: 5em;
     text-align: center;
+    background: rgb(35, 39, 42);
+    color: #fff;
 }
 
 section.about img {
@@ -129,5 +167,9 @@ section.about img {
 }
 
 footer {
-    border-top: 1px solid #f6f6f6;
+    border-top: rgb(52, 56, 59);
+}
+
+footer .content {
+    /* padding: 6vh 0; */
 }

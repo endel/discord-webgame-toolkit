@@ -10,48 +10,32 @@
 <body>
     <header>
         <div class="content">
-            <h1>Discord Web Game Toolkit</h1>
-            <p><small>*This project is not affiliated with Discord.</small></p>
-
-            <img src="screenshot.png" alt="Discord Web Game Toolkit" />
-
-            <p>The code on this repository is a Node.js application that you can either copy the files over to your existing Node.js application, or build your own stuff on top of it. You should deploy this code on your own server in order to have it working for your game.</p>
-            <br />
-            <a href="#" class="button">Purchase source-code for $19</a>
-
-
-        </div>
-    </header>
-
-    <section>
-        <div class="content">
             <h1>Authentication playground</h1>
 
-            <a href="#" onclick="discordSignIn();">Login</a> |
-            <a href="#" onclick="discordSignOut();">Logout</a> |
-            <a href="#" onclick="getUserData();">Get User From Token</a>
+            <a href="#" onclick="discordSignIn();return false;">Login</a> |
+            <a href="#" onclick="discordSignOut();return false;">Logout</a> |
+            <a href="#" onclick="getUserData();return false;">Get User From Token</a>
 
             <pre id="response"></pre>
+
+            <p><a href="https://discord.gg/dqTw2cKrAe">Join the Discord server</a> to test the bot.</p>
         </div>
-    </section>
+    </header>
 
     <script type="module">
         import { signIn, signOut, getUserData, token } from "./signin.js";
 
-        function clearStatus() {
-            document.getElementById('response').innerText = "";
-        }
+        const backendUrl = "http://localhost:3000";
 
-        function addStatus(text) {
-            document.getElementById('response').innerText += text + "\n";
-        }
+        function clearStatus() { document.getElementById('response').innerText = ""; }
+        function addStatus(text) { document.getElementById('response').innerText += text + "\n"; }
 
         addStatus("Token? " + JSON.stringify(token));
 
         window.getUserData = function() {
             clearStatus();
-            addStatus(`Request => http://localhost:3000/auth?token=${token}...`);
-            getUserData('http://localhost:3000')
+            addStatus(`Request => ${backendUrl}/auth?token=${token}...`);
+            getUserData(backendUrl)
                 .then((data) => {
                     addStatus("Response => " + JSON.stringify(data, null, 2))
                 })
@@ -63,7 +47,7 @@
         window.discordSignIn = function () {
             clearStatus();
             addStatus("Login window opened.");
-            signIn('http://localhost:3000').then((response) => {
+            signIn(backendUrl).then((response) => {
                 console.log("SUCCESS:", response)
                 addStatus("Response => " + JSON.stringify(response, null, 2));
 
@@ -78,50 +62,5 @@
             signOut();
         };
     </script>
-
-    <section>
-        <div class="content">
-            <h1>What is this?</h1>
-            <p>The code on this repository is a Node.js application that you can either copy the files over to your existing Node.js application, or build your own stuff on top of it. You should deploy this code on your own server in order to have it working for your game.</p>
-
-            <div class="custom-shape-divider-bottom-1617223032">
-                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-                </svg>
-            </div>
-        </div>
-    </section>
-
-    <section class="gray">
-        <div class="content">
-            <h1>Get the source-code and guide.</h1>
-            <p>✓ Written in TypeScript</p>
-            <p>✓ Based on Node.js</p>
-            <!-- <a href="https://discord.gg/dqTw2cKrAe"><img src="https://img.shields.io/discord/788501666160574494.svg?style=for-the-badge&colorB=7581dc&logo=discord&logoColor=white"></a> -->
-        </div>
-
-        <div class="custom-shape-divider-top-1617226099">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-            </svg>
-        </div>
-    </section>
-
-    <section class="about">
-        <div class="content">
-            <h1>About the author</h1>
-            <img width="200" height="200" src="https://avatars.githubusercontent.com/u/130494?v=4" alt="Endel">
-
-            <p>Endel has 13+ years of experience as a software engineer.</p>
-            <p>He is an expert on web technologies, JavaScript tooling, and multiplayer game development.</p>
-        </div>
-    </section>
-
-    <footer>
-        <div class="content">
-            <p>Copyright © 2021 <a href="https://endel.dev">Endel Dreyer</a></p>
-        </div>
-    </footer>
-    
 </body>
 </html>
