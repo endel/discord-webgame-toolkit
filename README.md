@@ -1,5 +1,7 @@
 # Discord Web Game Toolkit 
 
+> Please do not share copies of this document and source-code. Although I love open-source, this project is not open. See LICENSE file.
+
 The code on this repository is a Node.js application that you can either copy the files over to your existing Node.js application, or build your own stuff on top of it. You should deploy this code on your own server in order to have it working for your game.
 
 <img src="images/discord-auth.png" width="30%" align="left" />
@@ -10,7 +12,7 @@ The code on this repository is a Node.js application that you can either copy th
 - Discord OAuth Integration
 - Discord Bot with a `!profile` command to output the player's profile.
 - Express routes to authenticate with Discord
-- A `User` model with default properties, and a database setup. Add more models as you need.
+- A `User` model with default properties, and a database setup. You can add more models as you need.
 
 **Node modules in use:**
 - [MikroORM](https://www.npmjs.com/package/@mikro-orm/core) + [MongoDB](https://www.npmjs.com/package/mongodb) for database access.
