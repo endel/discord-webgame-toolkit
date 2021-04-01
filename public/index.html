@@ -9,25 +9,31 @@
 </head>
 <body>
     <header>
-        <div class="content split">
-            <div class="split-left">
-                <h1>Discord Web Game <br/>Toolkit</h1>
-                <p>Node.js</p>
+        <div class="content">
+            <h1>Discord Web Game Toolkit</h1>
+            <p><small>*This project is not affiliated with Discord.</small></p>
 
-                <button onclick="discordSignIn();">Login</button>
-                <button onclick="discordSignOut();">Logout</button>
+            <img src="screenshot.png" alt="Discord Web Game Toolkit" />
 
-                <button onclick="getUserData();">Get User From Token</button>
+            <p>The code on this repository is a Node.js application that you can either copy the files over to your existing Node.js application, or build your own stuff on top of it. You should deploy this code on your own server in order to have it working for your game.</p>
+            <br />
+            <a href="#" class="button">Purchase source-code for $19</a>
 
-                <p><small>*This project is not affiliated with Discord.</small></p>
-            </div>
-
-            <div class="split-right">
-                <pre id="response"></pre>
-            </div>
 
         </div>
     </header>
+
+    <section>
+        <div class="content">
+            <h1>Authentication playground</h1>
+
+            <a href="#" onclick="discordSignIn();">Login</a> |
+            <a href="#" onclick="discordSignOut();">Logout</a> |
+            <a href="#" onclick="getUserData();">Get User From Token</a>
+
+            <pre id="response"></pre>
+        </div>
+    </section>
 
     <script type="module">
         import { signIn, signOut, getUserData, token } from "./signin.js";

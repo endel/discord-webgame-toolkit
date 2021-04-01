@@ -12,14 +12,23 @@ body {
     margin: 0;
 }
 
-small { font-size: 0.8em; }
+small { font-size: 0.7em; }
 
 input, button {
     font-family: inherit; 
     font-size: inherit;
 }
 
+a:not(.button) {
+    color: #7289da;
+}
+
+a:hover:not(.button) {
+    text-decoration: none;
+}
+
 a.button {
+    text-decoration: none;
     display: inline-block;
 }
 
@@ -34,7 +43,7 @@ button, a.button {
     margin-bottom: 0.5em;
 }
 
-button:hover, a.button {
+button:hover, a.button:hover {
     background-color: #8ea1e1;
     box-shadow: 0 8px 15px rgb(0 0 0 / 20%);
 }
