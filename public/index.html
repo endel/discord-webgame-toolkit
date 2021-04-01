@@ -8,17 +8,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Discord Web Auth + Bot</h1>
+    <header>
+        <div class="content split">
+            <div class="split-left">
+                <h1>Discord Web Game <br/>Toolkit</h1>
+                <p>Node.js</p>
 
-    <button onclick="discordSignIn();">Login</button>
+                <button onclick="discordSignIn();">Login</button>
+                <button onclick="discordSignOut();">Logout</button>
 
-    <button onclick="discordSignOut();">Logout</button>
-    <br /><br />
+                <button onclick="getUserData();">Get User From Token</button>
 
-    <button onclick="getUserData();">Retrieve user data from cached local token</button>
-    <br /><br />
+                <p><small>*This project is not affiliated with Discord.</small></p>
+            </div>
 
-    <p id="response"></p>
+            <div class="split-right">
+                <pre id="response"></pre>
+            </div>
+
+        </div>
+    </header>
 
     <script type="module">
         import { signIn, signOut, getUserData, token } from "./signin.js";
@@ -63,6 +72,50 @@
             signOut();
         };
     </script>
+
+    <section>
+        <div class="content">
+            <h1>What is this?</h1>
+            <p>The code on this repository is a Node.js application that you can either copy the files over to your existing Node.js application, or build your own stuff on top of it. You should deploy this code on your own server in order to have it working for your game.</p>
+
+            <div class="custom-shape-divider-bottom-1617223032">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <section class="gray">
+        <div class="content">
+            <h1>Get the source-code and guide.</h1>
+            <p>✓ Written in TypeScript</p>
+            <p>✓ Based on Node.js</p>
+            <!-- <a href="https://discord.gg/dqTw2cKrAe"><img src="https://img.shields.io/discord/788501666160574494.svg?style=for-the-badge&colorB=7581dc&logo=discord&logoColor=white"></a> -->
+        </div>
+
+        <div class="custom-shape-divider-top-1617226099">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="content">
+            <h1>About the author</h1>
+            <img width="200" height="200" src="https://avatars.githubusercontent.com/u/130494?v=4" alt="Endel">
+
+            <p>Endel has 13+ years of experience as a software engineer.</p>
+            <p>He is an expert on web technologies, JavaScript tooling, and multiplayer game development.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="content">
+            <p>Copyright © 2021 <a href="https://endel.dev">Endel Dreyer</a></p>
+        </div>
+    </footer>
     
 </body>
 </html>
