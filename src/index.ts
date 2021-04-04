@@ -41,7 +41,7 @@ connect().then(() => {
 
   const port = process.env.PORT || 3000;
   app.listen(port, () => {
-    console.log(`Listening on ws://localhost:${port}`)
+    console.log(`Listening on http://localhost:${port}`)
     console.log(`Application v${pkg.version} ready.`);
   });
 });
