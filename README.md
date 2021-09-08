@@ -1,6 +1,4 @@
-# Discord Web Game Toolkit 
-
-> Please do not share copies of this document and source-code. Although I love open-source, this project is not open. See LICENSE file.
+# Discord Web Game Toolkit
 
 The code on this repository is a Node.js application that you can either copy the files over to your existing Node.js application, or build your own stuff on top of it. You should deploy this code on your own server in order to have it working for your game.
 
@@ -21,12 +19,14 @@ The code on this repository is a Node.js application that you can either copy th
 - [JsonWebToken](https://www.npmjs.com/package/jsonwebtoken) for encrypting and exposing a token containing the `discord_id` for the client-side.
 - [Discord.js](https://www.npmjs.com/package/discord.js) for Discord Bot integration.
 
+<a href="https://gamestd.io"><img src="https://gamestd.io/sponsored-by.png" width="200" /></a>
+
 # Setup Instructions
 
 ## Setting up your local environment
 
 - [Download and install Node.js v14](https://nodejs.org/en/)
-- [Download and install MongoDB Community Edition](https://www.mongodb.com/try/download/community) 
+- [Download and install MongoDB Community Edition](https://www.mongodb.com/try/download/community)
 - [Download and install Visual Studio Code](https://code.visualstudio.com/) (or other editor of your choice)
 
 To run the project locally, open the folder of this package on your terminal, and run the following commands:
@@ -96,7 +96,7 @@ DISCORD_BOT_TOKEN=NzkwNjQ3NTkyNDgwMjc2NTQx.X-Dp8w.hBQGt-ioJKvaIgdWp0NPFRPIa-w
 
 ## Adding the bot to your server
 
-The last step is to add the bot into your server. 
+The last step is to add the bot into your server.
 
 1. Select "OAuth" in the sidebar.
 2. In the "OAuth2 URL Generator", under "scopes" - select "bot".
@@ -114,7 +114,7 @@ You're done! Have fun making custom bot actions for your game!
 
 The source-code on this repository is very simple, and should be easily exchangeable if you'd like to move it over to an existing project.
 
-## MikroORM and the `User` model 
+## MikroORM and the `User` model
 
 MikroORM is an object–relational mapping that supports multiple database engines. On the current set-up, this project uses MongoDB, as you can see on `src/config/mikro-orm.config.ts`:
 
